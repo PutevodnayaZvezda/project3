@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Список задач</title>
+</head>
+<body>
+<h3>Список задач</h3>
+{% for task in tasks %}
+    <p>{{ forloop.counter }}. {{ task.name }} - {{ task.get_status_display }}
+        (<a href="{% url 'tasks:task_update' task.id %}">Обновить</a> |
+        <a href="{% url 'tasks:task_delete' task.id %}">Удалить</a>)
+    </p>
+{% endfor %}
+
+<p> <a href="{% url 'tasks:task_create' %}"> + Добавить новую задачу</a></p>
+</body>
+</html>

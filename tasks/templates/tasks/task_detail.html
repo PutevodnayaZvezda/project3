@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Детали задачи</title>
+</head>
+<body>
+<p> Имя задачи: {{ task.name }} | <a href="{% url 'tasks:task_update' task.id %}">Изменить</a> |
+    <a href="{% url 'tasks:task_delete' task.id %}">Удалить</a>
+</p>
+<p> Стутус задачи: {{ task.get_status_display }} </p>
+<p> <a href="{% url 'tasks:task_list' %}">Посмотреть все задачи</a> |
+    <a href="{% url 'tasks:task_create'%}">Добавить новую задачу</a>
+</p>
+</body>
+</html>
